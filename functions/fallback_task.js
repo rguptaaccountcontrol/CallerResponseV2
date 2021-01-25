@@ -17,8 +17,8 @@ exports.fallback_task = async function (context, event, callback, RB) {
       Remember.check_cnt = Memory.check_cnt + 1;
       console.log("Counter: " + Remember.check_cnt);
     }
-    
-    if (Remember.check_cnt >= 3) {
+
+    if (Remember.check_cnt >= 4) {
       Say = `I'm sorry didn't quite get that. `;
       Redirect = "task://Agent";
       //console.log(JSON.stringify(Memory));
