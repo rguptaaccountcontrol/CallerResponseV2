@@ -13,7 +13,7 @@ exports.agent_transfer_task =async function(context, event, callback,RB) {
      Say = " ";
      Remember.agent_transfer = true;
      Remember.choice=3;
-     Remember.c="Representative";
+     //Remember.c="Representative";
     
     //End of your code.
    
