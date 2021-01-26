@@ -60,7 +60,7 @@ exports.greeting_task = async function (context, event, callback, RB) {
                     to hear these options again say repeat or press 0.`;
     }
 
-    if (Remember.check_cnt <= 3) {
+    if (Remember.check_cnt <= 3 || Remember.check_cnt === undefined) {
       Say = `You can pay your Total balance or less than your total balance of $${RouteBalance} , `;
       Say += Prompt;
 
