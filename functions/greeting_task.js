@@ -44,24 +44,24 @@ exports.greeting_task = async function (context, event, callback, RB) {
 
     // This code runs when comming from Address_task
     if (Remember.check_cnt === 0)
-      Prompt = `To make a payment or payment arrangement say payment ,
-                   for our mailing address or web address say address ,
-                   to speak to a representative say agent ,
+      Prompt = `Are you calling to make a payment say payment,
+                   for our mailing address or web address say address,
+                   to speak to a representative say agent,
                    to hear these options again say repeat`;
     else {
       if (Memory.AFlag)
-        Prompt = `To make a payment or payment arrangement say payment or press 1 ,
-                   to speak to a representative say agent or press 3 ,
+        Prompt = `To make a payment say payment or press 1,
+                   to speak to a representative say agent or press 3,
                    to hear these options again say repeat or press 0.`;
       else
-        Prompt = `To make a payment or payment arrangement say payment or press 1 ,
-                    for our mailing address or web address say address or press 2 ,
-                    to speak to a representative say agent or press 3 ,
+        Prompt = `To make a payment say payment or press 1,
+                    for our mailing address or web address say address or press 2,
+                    to speak to a representative say agent or press 3,
                     to hear these options again say repeat or press 0.`;
     }
 
     if (Remember.check_cnt <= 3 || Remember.check_cnt === undefined) {
-      Say = `You can pay your Total balance or less than your total balance of $${RouteBalance} , `;
+      Say = `Your total balance is $${RouteBalance} , `;
       Say += Prompt;
 
       Listen = {
