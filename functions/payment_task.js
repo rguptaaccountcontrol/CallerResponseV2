@@ -12,7 +12,7 @@ exports.payment_task =async function(context, event, callback,RB) {
 
     Say = " ";
     Remember.choice=1;
-    Remember.c="Payment";
+    //Remember.c="Payment";
     
     //End of your code.
   
