@@ -69,10 +69,10 @@ exports.greeting_task = async function (context, event, callback, RB) {
           num_digits: 1,
           finish_on_key: "#",
           redirects: {
-            0: "task://greeting",
-            1: "task://payment",
-            2: "task://Address",
-            3: "task://Agent",
+            "0": "task://greeting",
+            "1": "task://payment",
+            "2": "task://Address",
+            "3": "task://Agent",
           },
         },
       };
