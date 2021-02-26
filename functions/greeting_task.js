@@ -18,16 +18,7 @@ exports.greeting_task = async function (context, event, callback, RB) {
 
     if (Memory.RouteBalance === undefined) RouteBalance = 400;
     else RouteBalance = Memory.RouteBalance;
-
-    if (Memory.mailingAddress === undefined) mailingAddress = "Woodland";
-    else mailingAddress = Memory.mailingAddress;
-
-    if (Memory.webPaymentAddress === undefined)
-      webPaymentAddress = "test@convergentusa.com";
-    else webPaymentAddress = Memory.webPaymentAddress;
-
-    console.log("mailingAddress: " + mailingAddress);
-    console.log("webPaymentAddress: " + webPaymentAddress);
+    
     console.log("RouteBalance: " + RouteBalance);
 
     if (Memory.check_cnt === undefined) {
