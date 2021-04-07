@@ -13,12 +13,14 @@ exports.greeting_task = async function (context, event, callback, RB) {
     let { CurrentTaskConfidence } = event;
     let CurrentConfidencevalue = Number(CurrentTaskConfidence);
     let RouteBalance;
-    let mailingAddress;
-    let webPaymentAddress;
+    let SIFAmount;
+
+    if (Memory.SIFAmount === undefined) SIFAmount = 200;
+    else SIFAmount = Memory.SIFAmount;
 
     if (Memory.RouteBalance === undefined) RouteBalance = 400;
     else RouteBalance = Memory.RouteBalance;
-    
+
     console.log("RouteBalance: " + RouteBalance);
 
     if (Memory.check_cnt === undefined) {
@@ -28,24 +30,40 @@ exports.greeting_task = async function (context, event, callback, RB) {
     // First time the CurrentConfidencevalue is 0
     else {
       if (CurrentConfidencevalue === 0) {
-        console.log("CurrentConfidencevalue: "+ CurrentConfidencevalue);
+        console.log("CurrentConfidencevalue: " + CurrentConfidencevalue);
         Remember.check_cnt = Memory.check_cnt + 1;
       }
     }
 
     // This code runs when comming from Address_task
-    if (Remember.check_cnt === 0)
-      Prompt = `Are you calling to make a payment say payment,
+    if (Remember.check_cnt === 0) {
+      if (SIFAmount > 0)
+        Prompt = `and your Reduced Balance amount is ${SIFAmount}.
+                  Are you calling to make a payment of your reduced balance 
+                  amount of ${SIFAmount} say payment, for our mailing address or
+                  web address say address, to speak to a representative say agent,
+                  to hear these options again say repeat`;
+      else
+        Prompt = `Are you calling to make a payment say payment,
                    for our mailing address or web address say address,
                    to speak to a representative say agent,
                    to hear these options again say repeat`;
+    }
     else {
       if (Memory.AFlag)
         Prompt = `To make a payment say payment or press 1,
                    to speak to a representative say agent or press 3,
                    to hear these options again say repeat or press 0.`;
       else
-        Prompt = `To make a payment say payment or press 1,
+        if (SIFAmount > 0)
+          Prompt = `and your Reduced Balance amount is ${SIFAmount}.
+                  Are you calling to make a payment of your reduced balance 
+                  amount of ${SIFAmount}, say payment or press 1,
+                  for our mailing address or web address say address or press 2,
+                  to speak to a representative say agent or press 3,
+                  to hear these options again say repeat or press 0.`;
+        else
+          Prompt = `To make a payment say payment or press 1,
                     for our mailing address or web address say address or press 2,
                     to speak to a representative say agent or press 3,
                     to hear these options again say repeat or press 0.`;
