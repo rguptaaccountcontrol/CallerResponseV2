@@ -11,7 +11,7 @@ exports.agent_transfer_task =async function(context, event, callback,RB) {
     const Memory = JSON.parse(event.Memory);
 
      Say = " ";
-     Remember.agent_transfer = true;
+     //Remember.agent_transfer = true;
      Remember.choice=3;
      //Remember.c="Representative";
     

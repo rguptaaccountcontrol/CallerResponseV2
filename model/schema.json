@@ -52,12 +52,20 @@
             "actions" : {
                 "actions" : [
                     {
-                        "redirect" : "https://callerresponsev2-4127-dev.twil.io/index"
+                        "redirect" : "https://callerresponsev2-8853-dev.twil.io/index"
                     }
                 ]
             },
             "fields" : [],
             "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "partial payment"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "arrangement"
+                },
                 {
                     "language" : "en-US",
                     "taggedText" : "payments"
@@ -85,7 +93,7 @@
             "actions" : {
                 "actions" : [
                     {
-                        "redirect" : "https://callerresponsev2-4127-dev.twil.io/index"
+                        "redirect" : "https://callerresponsev2-8853-dev.twil.io/index"
                     }
                 ]
             },
@@ -138,7 +146,7 @@
             "actions" : {
                 "actions" : [
                     {
-                        "redirect" : "https://callerresponsev2-4127-dev.twil.io/index"
+                        "redirect" : "https://callerresponsev2-8853-dev.twil.io/index"
                     }
                 ]
             },
@@ -150,12 +158,16 @@
             "actions" : {
                 "actions" : [
                     {
-                        "redirect" : "https://callerresponsev2-4127-dev.twil.io/index"
+                        "redirect" : "https://callerresponsev2-8853-dev.twil.io/index"
                     }
                 ]
             },
             "fields" : [],
             "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "address address"
+                },
                 {
                     "language" : "en-US",
                     "taggedText" : "address"
@@ -199,12 +211,20 @@
             "actions" : {
                 "actions" : [
                     {
-                        "redirect" : "https://callerresponsev2-4127-dev.twil.io/index"
+                        "redirect" : "https://callerresponsev2-8853-dev.twil.io/index"
                     }
                 ]
             },
             "fields" : [],
             "samples" : [
+                {
+                    "language" : "en-US",
+                    "taggedText" : "transfer"
+                },
+                {
+                    "language" : "en-US",
+                    "taggedText" : "men"
+                },
                 {
                     "language" : "en-US",
                     "taggedText" : "Agent"
@@ -276,6 +296,6 @@
         }
     ],
     "modelBuild" : {
-        "uniqueName" : "CallerResponseV2_23-1-2021_1.11.31am"
+        "uniqueName" : "CallerResponseV2_1-2-2021_7.01.44pm"
     }
 }
