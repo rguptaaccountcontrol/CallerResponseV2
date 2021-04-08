@@ -15,7 +15,7 @@ exports.greeting_task = async function (context, event, callback, RB) {
     let RouteBalance;
     let SIFAmount;
 
-    if (Memory.SIFAmount === undefined) SIFAmount = 200;
+    if (Memory.SIFAmount === undefined) SIFAmount = 0;
     else SIFAmount = Memory.SIFAmount;
 
     if (Memory.RouteBalance === undefined) RouteBalance = 400;
