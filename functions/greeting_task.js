@@ -15,7 +15,7 @@ exports.greeting_task = async function (context, event, callback, RB) {
     let RouteBalance;
     let SIFAmount;
 
-    if (Memory.SIFAmount === undefined) SIFAmount = 200;
+    if (Memory.SIFAmount === undefined) SIFAmount = 0;
     else SIFAmount = Memory.SIFAmount;
 
     if (Memory.RouteBalance === undefined) RouteBalance = 400;
@@ -38,9 +38,9 @@ exports.greeting_task = async function (context, event, callback, RB) {
     // This code runs when comming from Address_task
     if (Remember.check_cnt === 0) {
       if (SIFAmount > 0)
-        Prompt = `and your Reduced Balance amount is ${SIFAmount}.
+        Prompt = `and your Reduced Balance amount is  $${SIFAmount}.
                   Are you calling to make a payment of your reduced balance 
-                  amount of ${SIFAmount} say payment, for our mailing address or
+                  amount of $${SIFAmount} say payment, for our mailing address or
                   web address say address, to speak to a representative say agent,
                   to hear these options again say repeat`;
       else
@@ -56,9 +56,9 @@ exports.greeting_task = async function (context, event, callback, RB) {
                    to hear these options again say repeat or press 0.`;
       else
         if (SIFAmount > 0)
-          Prompt = `and your Reduced Balance amount is ${SIFAmount}.
+          Prompt = `and your Reduced Balance amount is $${SIFAmount}.
                   Are you calling to make a payment of your reduced balance 
-                  amount of ${SIFAmount}, say payment or press 1,
+                  amount of $${SIFAmount}, say payment or press 1,
                   for our mailing address or web address say address or press 2,
                   to speak to a representative say agent or press 3,
                   to hear these options again say repeat or press 0.`;
