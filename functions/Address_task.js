@@ -8,25 +8,11 @@ exports.Address_task =async function(context, event, callback,RB) {
     let Handoff = false;
     let Say = "";
     // Add your code here.
-    const Memory = JSON.parse(event.Memory);
+    //const Memory = JSON.parse(event.Memory);
     
-    let mailingAddress;
-    let webPaymentAddress;
-
-    if(Memory.mailingAddress=== undefined)
-       mailingAddress='Woodland';
-    else
-       mailingAddress=Memory.mailingAddress;
-    
-    if(Memory.webPaymentAddress=== undefined)
-       webPaymentAddress='test@convergentusa.com';
-    else
-      webPaymentAddress=Memory.webPaymentAddress;
-    
-    Say=`The mailing address is: ${mailingAddress}, and the web address is : ${webPaymentAddress}.`;
-    
-    Remember.AFlag = 'A';
-    Redirect = 'task://greeting';
+    Say=" ";
+    Remember.choice=2;
+   // Redirect = 'task://greeting';
    
     //End of your code.
   
